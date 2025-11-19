@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TyreGuard Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  .poster {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Responsive triangle containers */
+  .triangle {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+  }
+
+  .triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .top-left img {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  .top-right {
+    top: 0;
+    right: 0;
+  }
+  .top-right img {
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+  }
+
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  .bottom-left img {
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+  }
+
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  .bottom-right img {
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  }
+
+  /* Content overlay */
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    z-index: 2;
+    width: 90%;
+  }
+
+  .business-name {
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: clamp(32px, 8vw, 60px);
+    margin-bottom: 10px;
+  }
+
+  .slogan {
+    font-weight: bold;
+    font-style: italic;
+    font-size: clamp(16px, 4vw, 24px);
+    margin-bottom: 20px;
+  }
+
+  .services {
+    font-weight: 600;
+    font-size: clamp(14px, 3vw, 20px);
+    margin-bottom: 20px;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .contact div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact img {
+    width: clamp(20px, 4vw, 24px);
+    height: clamp(20px, 4vw, 24px);
+  }
+
+  /* QR code responsive */
+  .qr {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(80px, 15vw, 120px);
+    z-index: 2;
+  }
+
+  /* Footer */
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: clamp(10px, 2vw, 15px) 0;
+    font-size: clamp(12px, 2.5vw, 16px);
+    z-index: 2;
+  }
+
+  /* Make everything scale nicely on very small screens */
+  @media (max-width: 500px) {
+    .content {
+      width: 95%;
+    }
+    .contact {
+      gap: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- Triangle Background Images -->
+  <div class="triangle top-left"><img src="img1.jpg" alt="Background 1"></div>
+  <div class="triangle top-right"><img src="img2.jpg" alt="Background 2"></div>
+  <div class="triangle bottom-left"><img src="img3.jpg" alt="Background 3"></div>
+  <div class="triangle bottom-right"><img src="img4.jpg" alt="Background 4"></div>
+
+  <!-- Content Overlay -->
+  <div class="content">
+    <div class="business-name">TyreGuard</div>
+    <div class="slogan">"Unbreakable Confidence on Every Road."</div>
+
+    <div class="services">
+      <p>Tyre Prices Per Tyre:</p>
+      <p>15' = R150 | 16' = R160 | 17' = R170 | 18' = R180 | 19' = R190 | 20' = R200</p>
+    </div>
+
+    <div class="contact">
+      <div><img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp"> 078 628 2768</div>
+      <div><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email"> mpumelelongwenya8711@gmail.com</div>
+    </div>
+  </div>
+
+  <!-- QR Code -->
+  <img class="qr" src="QR-code.png" alt="QR Code">
+
+  <!-- Footer -->
+  <footer>
+    © 2025 TyreGuard™ - Unbreakable Confidence on Every Road.
+  </footer>
+</div>
+
+</body>
+</html>
