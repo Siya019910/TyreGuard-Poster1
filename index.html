@@ -17,56 +17,28 @@
     height: 100%;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
-    background-color: #D4AF37; /* GOLD BACKGROUND */
+    background-color: black; /* NO GOLD, USE BLACK BEHIND IMAGES */
   }
 
   .poster {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #D4AF37; /* GOLD BACKGROUND */
   }
 
-  /* Responsive triangle containers */
-  .triangle {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    overflow: hidden;
+  /* 4 equal square images (2x2 grid) */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
   }
 
-  .triangle img {
+  .grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  .top-left img {
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-  }
-
-  .top-right {
-    top: 0;
-    right: 0;
-  }
-  .top-right img {
-    clip-path: polygon(100% 0, 100% 100%, 0 0);
-  }
-
-  .bottom-left {
-    bottom: 0;
-    left: 0;
-  }
-  .bottom-left img {
-    clip-path: polygon(0 100%, 0 0, 100% 100%);
-  }
-
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-  }
-  .bottom-right img {
-    clip-path: polygon(100% 100%, 0 100%, 100% 0);
   }
 
   /* Content overlay */
@@ -79,6 +51,7 @@
     color: black;
     z-index: 2;
     width: 90%;
+    font-weight: 600;
   }
 
   .business-name {
@@ -97,7 +70,6 @@
   }
 
   .services {
-    font-weight: 600;
     font-size: clamp(14px, 3vw, 20px);
     margin-bottom: 20px;
   }
@@ -122,7 +94,7 @@
     height: clamp(20px, 4vw, 24px);
   }
 
-  /* QR code responsive */
+  /* QR code */
   .qr {
     position: absolute;
     top: 5%;
@@ -144,35 +116,46 @@
     font-size: clamp(12px, 2.5vw, 16px);
     z-index: 2;
   }
-
-  @media (max-width: 500px) {
-    .content {
-      width: 95%;
-    }
-    .contact {
-      gap: 10px;
-    }
-  }
 </style>
 </head>
 <body>
 
 <div class="poster">
-  <!-- Triangle Background Images -->
-  <div class="triangle top-left"><img src="img1.jpg" alt="Background 1"></div>
-  <div class="triangle top-right"><img src="img2.jpg" alt="Background 2"></div>
-  <div class="triangle bottom-left"><img src="img3.jpg" alt="Background 3"></div>
-  <div class="triangle bottom-right"><img src="img4.jpg" alt="Background 4"></div>
+
+  <!-- NEW 2x2 GRID IMAGES (NO OVERLAP) -->
+  <div class="grid">
+    <img src="img1.jpg" alt="Background 1">
+    <img src="img2.jpg" alt="Background 2">
+    <img src="img3.jpg" alt="Background 3">
+    <img src="img4.jpg" alt="Background 4">
+  </div>
 
   <!-- Content Overlay -->
   <div class="content">
     <div class="business-name">TyreGuard</div>
     <div class="slogan">"Unbreakable Confidence on Every Road."</div>
 
+    <!-- SERVICES -->
     <div class="services">
-      <p>Tyre Prices Per Tyre:</p>
-      <p>15' = R150 | 16' = R160 | 17' = R170 | 18' = R180 | 19' = R190 | 20' = R200</p>
-    </div>
+  <p style="font-weight:700; margin-bottom:10px; color:white;">Tyre Prices Per Tyre:</p>
+
+  <div style="
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      text-align:center;
+      font-size:clamp(14px,3vw,20px);
+      font-weight:600;
+      color:white;
+  ">
+      <span>15' = R150</span>
+      <span>16' = R160</span>
+      <span>17' = R170</span>
+      <span>18' = R180</span>
+      <span>19' = R190</span>
+      <span>20' = R200</span>
+  </div>
+</div>
 
     <div class="contact">
       <div><img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp"> 078 628 2768</div>
@@ -189,3 +172,4 @@
 
 </body>
 </html>
+
